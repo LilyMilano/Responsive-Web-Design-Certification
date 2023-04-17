@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>freeCodeCamp Survey Form</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <h1 id="title">freeCodeCamp Survey Form</h1>
+    <p id="description">Thank you for taking the time to help us improve the platform</p>
+    <form id="survey-form">
+
+        <label for="name" id="name-label">Name: <input id="name" type="text" required
+                placeholder="Enter your name" /></label>
+        <label for="email" id="email-label">Email: <input id="email" type="email" required
+                placeholder="Enter your email" /></label>
+        <label for="number" id="number-label">Age (optional): <input id="number" type="number" min="13" max="120"
+                placeholder="Age" /></label>
+
+        <label for="dropdown">Which option best describes your current role?
+            <select id="dropdown">
+                <option value="" disabled selected>Select current role</option>
+                <option value="1">Student</option>
+                <option value="2">Full Time Job</option>
+                <option value="3">Full Time Learner</option>
+                <option value="4">Prefer not to say</option>
+                <option value="5">Other</option>
+            </select>
+        </label>
+
+
+        <label for="radio-button">Would you recommend freeCodeCamp to a friend?
+            <label for="radio-button"><input id="radio-button" type="radio" name="recommendation" value="1" checked
+                    class="inline" /> Definitely</label>
+            <label for="radio-button"><input id="radio-button" type="radio" name="recommendation" value="2" class="inline" />
+                Maybe</label>
+            <label for="radio-button"><input id="radio-button" type="radio" name="recommendation" value="3" class="inline" />
+                Not sure</label>
+        </label>
+
+        <label for="checkbox-improve" class="checkbox-wrapper">What would you like to see improved? (Check all that
+            apply)
+            <label for="checkbox-improve">
+                <input type="checkbox" value="1" id="checkbox-improve" class="inline">Front-end Projects
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="2" id="checkbox-improve" class="inline">Back-end Projects
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="3" id="checkbox-improve" class="inline">Data Visualization
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="4" id="checkbox-improve" class="inline">Challenges
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="5" id="checkbox-improve" class="inline">Open Source Community
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="6" id="checkbox-improve" class="inline">Gitter help rooms
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="7" id="checkbox-improve" class="inline">Videos
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="8" id="checkbox-improve" class="inline">City Meetups
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="9" id="checkbox-improve" class="inline">Wiki
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="10" id="checkbox-improve" class="inline">Forum
+            </label>
+            <label for="checkbox-improve">
+                <input type="checkbox" value="11" id="checkbox-improve" class="inline">Additional Courses
+            </label>
+        </label>
+
+        <label for="comments" class="textarea-wrapper">Any comments or suggestions?
+            <textarea id="comments" rows="7" cols="30" placeholder="Enter your comment here..."></textarea>
+        </label>
+
+        <input type="submit" id="submit" value="Submit" />
+
+    </form>
+</body>
+
+</html>
