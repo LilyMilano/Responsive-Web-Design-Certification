@@ -3,15 +3,16 @@
     --building-color2: #66cc99;
     --building-color3: #cc6699;
     --building-color4: #538cc6;
-    --window-color1: black;
+    --window-color1: #bb99ff;
     --window-color2: #8cd9b3;
     --window-color3: #d98cb3;
+    --window-color4: #8cb3d9;
 }
 
 /* Note: --variable-name: value; */
 
 * {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     box-sizing: border-box;
 }
 
@@ -19,6 +20,12 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+}
+
+/* SKY ***** ************** */
+
+.sky{
+    background: radial-gradient(circle closest-corner at 15% 15%,#ffcf33, #ffcf33 20%, #ffff66 21%, #bbeeff 100%);
 }
 
 /* BUILDINGS ************** */
@@ -40,7 +47,15 @@ body {
     align-items: center;
 }
 
+.window-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 /* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+
+/* STYLES FOR BACKGROUND BUILDING 1 */
 
 .bb1 {
     width: 10%;
@@ -70,7 +85,7 @@ body {
     background: linear-gradient(var(--building-color1) 50%, var(--window-color1));
 }
 
-/* STYLES FOR BUILDING 2 */
+/* STYLES FOR BACKGROUND BUILDING 2 */
 
 .bb2 {
     width: 10%;
@@ -89,7 +104,7 @@ body {
     background: repeating-linear-gradient(var(--building-color2), var(--building-color2) 6%, var(--window-color2) 6%, var(--window-color2) 9%);
 }
 
-/* STYLES FOR BUILDING 3 */
+/* STYLES FOR BACKGROUND BUILDING 3 */
 
 .bb3 {
     width: 10%;
@@ -97,7 +112,7 @@ body {
     background: repeating-linear-gradient(90deg, var(--building-color3), var(--building-color3) 7.5%, var(--window-color3) 15%);
 }
 
-/* STYLES FOR BUILDING 4 */
+/* STYLES FOR BACKGROUND BUILDING 4 */
 
 .bb4 {
     width: 11%;
@@ -122,44 +137,152 @@ body {
     background-color: var(--building-color4);
 }
 
+.bb4-window {
+    width: 18%;
+    height: 90%;
+    background-color: var(--window-color4);
+}
+
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+
+/* STYLES FOR FOREGROUND BUILDING 1 */
+
 
 .fb1 {
     width: 10%;
     height: 60%;
+}
+
+.fb1a {
+    border-bottom: 7vh solid var(--building-color4);
+    border-left: 2vw solid transparent;
+    border-right: 2vw solid transparent;
+}
+
+.fb1b {
+    width: 60%;
+    height: 10%;
     background-color: var(--building-color4);
 }
+
+.fb1c {
+    width: 100%;
+    height: 80%;
+    background: repeating-linear-gradient(90deg, var(--building-color4), var(--building-color4) 10%, transparent 10%, transparent 15%), repeating-linear-gradient(var(--building-color4), var(--building-color4) 10%, var(--window-color4) 10%, var(--window-color4) 90%)
+}
+
+/* STYLES FOR FOREGROUND BUILDING 2 */
 
 .fb2 {
     width: 10%;
     height: 40%;
+
+}
+
+.fb2a {
+    width: 100%;
+    border-bottom: 10vh solid var(--building-color3);
+    border-left: 1vw solid transparent;
+    border-right: 1vw solid transparent;
+}
+
+.fb2b {
+    width: 100%;
+    height: 75%;
     background-color: var(--building-color3);
 }
+
+.fb2-window {
+    width: 22%;
+    height: 100%;
+    background-color: var(--window-color3);
+}
+
+/* STYLES FOR FOREGROUND BUILDING 3 */
 
 .fb3 {
     width: 10%;
     height: 35%;
+}
+
+.fb3a {
+    width: 80%;
+    height: 15%;
     background-color: var(--building-color1);
 }
+
+.fb3-window {
+    width: 25%;
+    height: 80%;
+    background-color: var(--window-color1);
+}
+
+.fb3b {
+    width: 100%;
+    height: 35%;
+    background-color: var(--building-color1);
+}
+
+/* STYLES FOR FOREGROUND BUILDING 4 */
 
 .fb4 {
     width: 8%;
     height: 45%;
-    background-color: var(--building-color1);
     position: relative;
     left: 10%;
 }
 
+.fb4a {
+    border-top: 5vh solid transparent;
+    border-left: 8vw solid var(--building-color1);
+}
+
+.fb4b {
+    width: 100%;
+    height: 89%;
+    background-color: var(--building-color1);
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.fb4-window {
+    width: 30%;
+    height: 10%;
+    border-radius: 50%;
+    background-color: var(--window-color1);
+    margin: 10%;
+}
+
+/* STYLES FOR FOREGROUND BUILDING 5 */
+
 .fb5 {
     width: 10%;
     height: 33%;
-    background-color: var(--building-color2);
     position: relative;
     right: 10%;
+    background: repeating-linear-gradient(var(--building-color2), var(--building-color2) 5%, transparent 5%, transparent 10%), repeating-linear-gradient(90deg, var(--building-color2), var(--building-color2) 12%, var(--window-color2) 12%, var(--window-color2) 44%);
 }
+
+/* STYLES FOR FOREGROUND BUILDING 6 */
 
 .fb6 {
     width: 9%;
     height: 38%;
-    background-color: var(--building-color3);
+    background: repeating-linear-gradient(90deg, var(--building-color3), var(--building-color3) 10%, transparent 10%, transparent 30%), repeating-linear-gradient(var(--building-color3), var(--building-color3) 10%, var(--window-color3) 10%, var(--window-color3) 30%);
+}
+
+@media(max-width: 1000px){
+    :root{
+    --building-color1: #000;
+    --building-color2: #000;
+    --building-color3: #000;
+    --building-color4: #000;
+    --window-color1: #777;
+    --window-color2: #777;
+    --window-color3: #777;
+    --window-color4: #777;
+    }
+    .sky{
+        background: radial-gradient(circle closest-corner at 15% 15%,#ccc, #ccc 20%, #445 21%, #223 100%);
+    }
 }
