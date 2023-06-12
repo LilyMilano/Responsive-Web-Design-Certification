@@ -37,7 +37,7 @@ except:
 if floatHours > 40:
     print("Overtime")
     regularPay = floatHours * floatRate
-    extraPay = (floatHours - 40) * (1.5 * floatRate)
+    extraPay = (floatHours - 40) * (0.5 * floatRate)
     print(regularPay, extraPay)
     pay = regularPay + extraPay
 else:
@@ -50,8 +50,8 @@ print("Pay: ", pay)
 #floatRate: 10
 
 # Overtime
-# 500.0 150.0
-# Pay:  650.0
+# 500.0 50.0
+# Pay:  550.0
 
 # __________________________________________________________________
 
