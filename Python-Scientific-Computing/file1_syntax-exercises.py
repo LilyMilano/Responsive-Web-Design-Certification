@@ -46,6 +46,9 @@ else:
 print("Pay: ", pay)
 
 # Log:
+#floatHours: 50
+#floatRate: 10
+
 # Overtime
 # 500.0 150.0
 # Pay:  650.0
