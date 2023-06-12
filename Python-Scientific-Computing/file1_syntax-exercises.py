@@ -12,7 +12,7 @@ print("US floor:", usf)
 
 # __________________________________________________________________
 
-#? Write a program to prompt the user for hours and rate per hours to compute gross pay.
+# ? Write a program to prompt the user for hours and rate per hours to compute gross pay.
 hours = input("Enter Hours: ")
 rate = input("Enter Rate: ")
 pay = float(hours) * float(rate)
@@ -22,9 +22,37 @@ print("Pay:", pay)
 # Enter Rate: 2.75
 # Pay: 96.25
 
+
+# ? Rewrite your pay computation to give the employee 1.5 times the hourly rate for hours worked about 40 hours.
+strHours = input("Enter Hours: ")
+strRate = input("Enter Rate: ")
+try:
+    floatHours = float(strHours)
+    floatRate = float(strRate)
+# print(floatHours, floatRate)
+except:
+    print("Error, please enter numeric input")
+    quit()
+
+if floatHours > 40:
+    print("Overtime")
+    regularPay = floatHours * floatRate
+    extraPay = (floatHours - 40) * (1.5 * floatRate)
+    print(regularPay, extraPay)
+    pay = regularPay + extraPay
+else:
+    print("Regular")
+    pay = floatHours * floatRate
+print("Pay: ", pay)
+
+# Log:
+# Overtime
+# 500.0 150.0
+# Pay:  650.0
+
 # __________________________________________________________________
 
-#? What will print out after running this code:
+# ? What will print out after running this code:
 width = 15
 height = 12.0
 print(height / 3)
@@ -32,7 +60,7 @@ print(height / 3)
 # 4.0
 
 # __________________________________________________________________
-#? Conditional Steps:
+# ? Conditional Steps:
 x = 15
 
 if x < 10:
@@ -78,7 +106,7 @@ print("All Done")
 # All Done
 # __________________________________________________________________
 
-#? Nested Decisions:
+# ? Nested Decisions:
 z = 42
 if z > 1:
     print("More than one")
@@ -93,7 +121,7 @@ print("All done")
 
 # __________________________________________________________________
 
-#? Two-way decisions with else:
+# ? Two-way decisions with else:
 
 var1 = 4
 
@@ -108,7 +136,7 @@ print("All done")
 # All done
 # __________________________________________________________________
 
-#? Multi-way (elif):
+# ? Multi-way (elif):
 
 # Example 1:
 
@@ -148,4 +176,46 @@ else:
 
 # __________________________________________________________________
 
-#? Try-Except:
+# ? Try-Except:
+
+# Example a:
+astr = "Hello, Chuck"
+
+try:
+    istr = int(astr)
+except:
+    istr = -1
+
+print("First: ", istr)
+
+# Example b:
+astr = "123"
+
+try:
+    istr = int(astr)
+except:
+    istr = -1
+
+print("Second: ", istr)
+
+# Log:
+# First:  -1
+# Second:  123
+
+# Example c:
+rawstr = input("Enter a positive number: ")
+try:
+    ivalue = int(rawstr)
+except:
+    ivalue = -1
+
+if ivalue > 0:
+    print("Nice work")
+else:
+    print("Not a positive number")
+
+# Enter a number: 42
+# Nice work
+
+# Enter a number: forty-two
+# Not a positive number
