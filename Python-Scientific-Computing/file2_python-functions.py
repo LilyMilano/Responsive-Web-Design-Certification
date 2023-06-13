@@ -72,13 +72,13 @@ x = 5
 print("Hello")
 
 
-def print_lyrics():
+def print_lyrics_1():
     print("I am a lumberjack, and I am okay.")
     print("I sleep all night, and I work all day.")
 
 
 print("Yo")
-print_lyrics()  # Invoking the function
+print_lyrics_1()  # Invoking the function
 x = x + 2
 print(x)
 
@@ -108,7 +108,7 @@ greet("fr")  # Bonjour
 # ? Return Value:
 
 
-def greet(lang):
+def greet_1(lang):
     if lang == "es":
         return "Hola"
     elif lang == "fr":
@@ -117,9 +117,9 @@ def greet(lang):
         return "Hello"
 
 
-print(greet("en"), "Glenn")  # Hello Glenn
-print(greet("es"), "Sally")  # Hola Sally
-print(greet("fr"), "Lily")  # Bonjour Lily
+print(greet_1("en"), "Glenn")  # Hello Glenn
+print(greet_1("es"), "Sally")  # Hola Sally
+print(greet_1("fr"), "Lily")  # Bonjour Lily
 
 # __________________________________________________________________
 # ? Multiple Parameters / Arguments:
