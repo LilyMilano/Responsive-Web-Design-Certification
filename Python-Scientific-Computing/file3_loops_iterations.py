@@ -193,7 +193,7 @@ print("After:", counter)
 # After: 6
 
 # ? Summing in a loop:
-# * To add up a value we encounter in a loop, we introduce an accumulator variable that starts at 0 and we add the value to the sum each time through the loop.
+# * To add up a value we encounter in a loop, we introduce an accumulator variable (sum) that starts at 0 and we add the value to the sum each time through the loop.
 
 accumulator = 0
 print("Before:", accumulator)
@@ -211,3 +211,91 @@ print("After:", accumulator)
 # 139 74
 # 154 15
 # After: 154
+
+# ? Finding the average in a loop:
+# * An average just combines the counting and sum patterns and divided when the loop is done.
+
+count = 0
+sum = 0
+print("Before:", count, sum)
+for value in [9, 41, 12, 3, 74, 15]:
+    count += 1
+    sum += value
+    print(count, sum, value)
+print("After:", count, sum, (sum / count))
+
+# Output:
+# Before: 0 0
+# 1 9 9
+# 2 50 41
+# 3 62 12
+# 4 65 3
+# 5 139 74
+# 6 154 15
+# After: 6 154 25.666666666666668
+
+# ? Filtering in a loop:
+# * We use an 'if' statement in the loop to catch/filter the values we are looking for.
+
+print("Before")
+for value in [9, 41, 12, 3, 74, 15]:
+    if value > 20:
+        print("Large number", value)
+print("After")
+
+# Output:
+# Before
+# Large number 41
+# Large number 74
+# After
+
+# ? Search Using a Boolean Variable:
+# * If we just want to search and know if a value was found, we use a variable that starts at 'False' and is set to True as soon as we find what we are looking for.
+
+found = False
+print("Before:", found)
+for value in [9, 41, 12, 3, 74, 15]:
+    if value == 3:
+        found = True
+    print(found, value)
+print("After:", found)
+
+# Output:
+# Before: False
+# False 9
+# False 41
+# False 12
+# True 3
+# True 74
+# True 15
+# After: True
+
+# ? Review exercise:
+# * Write a program which repeatedly reads numbers until user enters 'done'. Once 'done' is entered, print out the total, count, and average of the numbers. If the user enters anything other than a number, detect their mistake using 'try' and 'except' and print and error message and skip to the next number.
+
+count = 0
+accum = 0.0
+while True:
+    str_value = input("Enter a number: ")
+    if str_value == "done":
+        break
+    try:
+        f_value = float(str_value)
+    except:
+        print("Invalid input")
+        continue
+    # print(f_value)
+    count += 1
+    accum += f_value
+# print("ALL DONE")
+print(count, accum, accum / count)
+
+# Output:
+# Enter a number: li
+# Invalid input
+# Enter a number: 15
+# Enter a number: 15
+# Enter a number: 15
+# Enter a number: 15
+# Enter a number: done
+# 4 60.0 15.0
