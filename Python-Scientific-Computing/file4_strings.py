@@ -61,11 +61,11 @@ print(count)
 # Output:
 # 3
 
-#...................................................
+# ...................................................
 
-for n in 'banana':
+for n in "banana":
     print(n)
-    
+
 # Output:
 # b
 # a
@@ -74,4 +74,143 @@ for n in 'banana':
 # n
 # a
 
-# ? Intermediate Strings:
+# TODO Intermediate Strings:
+
+# ? Slicing Strings:
+
+str = "Monty Python"
+
+print(str[0:4])
+# str sub zero through four: start at position zero and then go up through, but not including four.
+# Output: Mont
+print(str[6:7])
+# Output: P
+print(str[6:20])
+# Output: Python (if the second number is beyond the end of the string, it stops at the end.)
+
+# * If we leave off the first number or the last number of the slice. it is assumed to be the beginning or end of the string respectively:
+
+str = "Monty Python"
+print(str[:2])
+# Output: Mo
+print(str[8:])
+# Output: thon
+print(str[:])
+# Output: Monty Python
+
+# ? String Concatenation:
+a = "hello"
+b = a + "there"
+print(b)
+# Output: hellothere
+c = a + " " + "there"
+print(c)
+# Output: hello there
+
+# ? Using 'in' as a logical operator:
+# * The 'in' keyword can also be used to check to see is one string is in another string.
+
+fruit = "banana"
+
+if "n" in fruit:
+    print("Found it!")
+else:
+    print("Not found it!")
+# Output: Found it!
+# .................................................................
+
+if "m" in fruit:
+    print("Found it!")
+else:
+    print("Not found it!")
+# Output: Not found it!
+# .................................................................
+
+if "nan" in fruit:
+    print("Found it!")
+else:
+    print("Not found it!")
+# Output: Found it!
+# .................................................................
+
+if "a" in fruit:
+    print("Found it!")
+else:
+    print("Not found it!")
+# Output: Found it!
+
+# .................................................................
+
+# ? String Comparison (lexicographically):
+word = input("> What is your favorite fruit? ")
+if word == "banana":
+    print("All right, bananas.")
+if word < "banana":
+    print("Your word," + word + ", comes before banana.")
+elif word > "banana":
+    print("Your word, " + word + ", comes after banana.")
+else:
+    print("All right, bananas.")
+
+# Output:
+# > What is your favorite fruit? coconut
+# Your word, coconut, comes after banana.
+
+# > What is your favorite fruit? BANANA
+# Your word,BANANA, comes before banana.
+
+# > What is your favorite fruit? banana
+# All right, bananas.
+# All right, bananas.
+
+# .................................................................
+
+# ? String Library:
+# https://www.w3schools.com/python/python_ref_string.asp
+# ? functions do not modify the original string. The return a new altered string (zap).
+
+# ? lower()
+
+greet = "Hello Bob"
+zap = greet.lower()
+print(zap)
+# Output:
+# hello bob
+
+print(greet)  # Not altered
+# Output:
+# Hello Bob
+
+print("Hi There".lower())
+# Output:
+# hi there
+
+# .................................................................
+stuff = "Hello world"
+print(type(stuff))
+
+# Output:
+# <class 'str'>
+
+# .................................................................
+print(dir(stuff))
+# https://docs.python.org/3/library/stdtypes.html#string-methods
+
+
+# * ['__add__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getnewargs__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__mod__', '__mul__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__rmod__', '__rmul__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'capitalize', 'casefold', 'center', 'count', 'encode', 'endswith', 'expandtabs', 'find', 'format', 'format_map', 'index', 'isalnum', 'isalpha', 'isascii', 'isdecimal', 'isdigit', 'isidentifier', 'islower', 'isnumeric', 'isprintable', 'isspace', 'istitle', 'isupper', 'join', 'ljust', 'lower', 'lstrip', 'maketrans', 'partition', 'removeprefix', 'removesuffix', 'replace', 'rfind', 'rindex', 'rjust', 'rpartition', 'rsplit', 'rstrip', 'split', 'splitlines', 'startswith', 'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+
+# .................................................................
+
+# ? find(): We use .find() function to search for a substring within another string.
+# ? find() finds the first occurrence of the substring.
+# ? If the substring is not found find() returns -1
+# ? Remember that string positions starts at zero.
+
+fruit = "banana"
+position = fruit.find("na")
+print(position)
+# * Output : 2
+
+pos = fruit.find("z")
+print(pos)
+# * Output : -1
