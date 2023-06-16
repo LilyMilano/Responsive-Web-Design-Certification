@@ -214,3 +214,100 @@ print(position)
 pos = fruit.find("z")
 print(pos)
 # * Output : -1
+
+# .................................................................
+
+# ? UPPER CASE:
+
+greet = "Hello Bob"
+greet_upper = greet.upper()
+print(greet_upper)
+# Output: HELLO BOB
+
+greet_lower = greet.lower()
+print(greet_lower)
+# Output: hello bob
+
+# .................................................................
+
+# ? Search and replace:
+# * replace() is like a "search and replace" operation.
+# * It replaces ->> all concurrences <<- of the search string with the replacement string.
+
+greet = "Hello Bob"
+greet_replace = greet.replace("Bob", "Jane")
+print(greet_replace)
+# Output:Hello Jane
+
+greet_replace = greet.replace("o", "X")
+print(greet_replace)
+# Output: HellX BXb
+
+# .................................................................
+
+# ? Stripping Whitespace:
+# ? Take a string and remove whitespace at the beginning and/or end
+
+# * lstrip() and rstrip() >> Remove whitespace at the left or right.
+# * strip() >> Removes both beginning and ending whitespace
+
+greet = "   Hello Bob  "
+zaz = greet.rstrip()
+print("rstrip: ", zaz)
+# Output: rstrip:     Hello Bob
+
+zaz = greet.lstrip()
+print("lstrip: ", zaz)
+# Output: lstrip:  Hello Bob
+
+zaz = greet.strip()
+print("strip: ", zaz)
+# Output: lstrip:  Hello Bob
+
+# .................................................................
+
+# ? Prefixes:
+# * startswith()
+
+line = "Please have a nice day"
+
+if line.startswith("Please"):
+    print(True)
+elif line.startswith("p"):
+    print(False)
+else:
+    print("Invalid input")
+# Output: True
+
+# .................................................................
+
+# ? Parsing and Extracting:
+
+data = "From stephen.marquard@uct.ac.za Sat Jan 5 09:14:16 2008"
+# * Extracting email host: 'uct.ac.za' (from data)
+atposition = data.find("@")
+print(atposition)  # * 21
+space_position = data.find(" ", atposition)
+print(space_position)  # * 31
+host = data[atposition + 1 : space_position]
+print(host)
+# * Output:
+# * uct.ac.za
+# .................................................................
+
+# ? Exercise  6.5: Take the following Python code that stores a string:
+
+# ? string = 'X-DSPAM-Confidence: 0.8475'
+
+# ? Use find and string slicing to extract the portion of the string after the colon character and then use the float function to convert the extraced string into a floating number.
+
+str = "X-DSPAM-Confidence: 0.8475"
+print(str)  # X-DSPAM-Confidence: 0.8475
+colon_position = str.find(":")
+print(colon_position)  # * 18
+piece = str[18 + 2 :]
+print(piece)  # * 0.8475
+print(type(piece))  # * <class 'str'>
+value = float(piece)
+print(value)  # * 0.8475
+print(type(value))  # * <class 'float'> 
