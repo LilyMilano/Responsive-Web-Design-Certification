@@ -38,7 +38,7 @@ print("Done!")
 # Done!
 
 # ________________________________________________________________
-x = 0
+n = 0
 
 while True:
     if n == 3:
@@ -170,6 +170,16 @@ print("Smallest:", smallest)
 # Loop: 74 2
 # Loop: 1 1
 # Smallest: 1
+
+smallest = None
+print("Before")
+for value in [9, 41, 12, 3, 74, 15]:
+    if smallest is None:
+        smallest = value
+    elif value < smallest:
+        smallest = value
+    print(smallest, value)
+print("After", smallest)
 
 # ? Counting a loop:
 
