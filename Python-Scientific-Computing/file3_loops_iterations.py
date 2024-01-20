@@ -181,6 +181,15 @@ for value in [9, 41, 12, 3, 74, 15]:
     print(smallest, value)
 print("After", smallest)
 
+# Before
+# 9 9
+# 9 41
+# 9 12
+# 3 3
+# 3 74
+# 3 15
+# After 3
+
 # ? Counting a loop:
 
 # * To count how many times we execute a loop, we introduce a counter variable that starts at 0 and we add one to it each time through the loop.
