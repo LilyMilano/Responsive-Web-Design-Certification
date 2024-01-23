@@ -188,3 +188,121 @@ print("Average:", average)
 # Enter a number: 5
 # Enter a number: done
 # Average: 5.666666666666667
+
+# __________________________________________________________________________
+
+# ? Best friends: Strings and Lists
+# * Split() breaks a string into parts and produces a list of strings. We think of these as words. We can access a particular word or loop through all the words.
+
+abc = "With three words"
+
+stuff = abc.split()
+
+print(stuff)  # ['With', 'three', 'words']
+print(len(stuff))  # 3
+print(stuff[0])  # With
+
+for word in stuff:
+    print(word)
+# Output:
+# With
+# three
+# words
+# __________________________________________________________________________
+
+# * When you do not specify a delimiter, multiple spaces are treated like one delimiter:
+
+line = "A lot                of spaces"
+temp = line.split()
+print(temp)  # ['A', 'lot', 'of', 'spaces']
+
+# * You can specify what delimiter character to use in the splitting:
+
+line = "first;second;third"
+thing = line.split()
+print(thing)  # ['first;second;third']
+print(len(thing))  # 1
+
+thing = line.split(";")
+print(thing)  # ['first', 'second', 'third']
+print(len(thing))  # 3
+
+# __________________________________________________________________________
+fhand = open("mbox.txt")
+for line in fhand:
+    line = line.rstrip()
+    if not line.startswith("De: "):
+        continue
+    words = line.split()
+    print(words[2])  # Aid
+
+line = "De: Financial Aid <financial.aid@uopeople.edu>"
+words = line.split()
+print(words)  # ['De:', 'Financial', 'Aid', '<financial.aid@uopeople.edu>']
+
+# ? The Double split pattern:
+# * Sometimes we split a line one way, and then grab one of the pieces of the line and split that piece again:
+
+words = line.split()
+email = words[3]
+print(email)  # <financial.aid@uopeople.edu>
+pieces = email.split("@")
+print(pieces[1][:-1])  # uopeople.edu
+
+# * Note: The [:-1] notation specifies that you want to slice the string from the beginning to the second-to-last character, effectively removing the final character ">".
+
+# _____________________________________________________________________
+# ? Exercise:
+# * Python Guardian Pattern: The guardian pattern is a technique used in Python to ensure that certain conditions are met before executing a block of code. It is often used to handle cases where unexpected data or errors may occur. The guardian pattern helps to make the code more robust and prevents potential errors or crashes.
+
+# ? Way 1
+
+file_handler = open("mbox.txt")
+
+for line in file_handler:
+    line = line.rstrip()
+    words = line.split()
+
+    # guardian a bit stronger:
+    if len(words) < 3:
+        continue
+
+    if words[0] != "De:":
+        continue
+    print(words[3][1:-1])  # * financial.aid@uopeople.edu
+
+    # * [1:-1] get rid of "<" and ">" symbols.
+
+# ? Exercise: Way 2
+
+file_handler = open("mbox.txt")
+
+for line in file_handler:
+    line = line.rstrip()
+    words = line.split()
+
+    # Guardian in a compound statement:
+    if len(words) < 3 or words[0] != "De:":
+        continue
+    print(words[3][1:-1])  # * financial.aid@uopeople.edu
+
+# ? Exercise: Way 3
+# * You can replace the guardian pattern in your code with a try-except block. The try-except block is a common approach in Python for handling exceptions and can be used to achieve similar functionality as the guardian pattern.
+
+file_handler = open("mbox.txt")
+
+for line in file_handler:
+    line = line.rstrip()
+    words = line.split()
+
+    # * try-except block:
+    try:
+        if len(words) < 3:
+            raise IndexError  # Raise an exception if the condition is not met
+        if words[0] != "De:":
+            raise ValueError  # Raise an exception if the condition is not met
+        print(words[3][1:-1])  # * financial.aid@uopeople.edu
+    except (IndexError, ValueError):
+        continue
+
+# TODO: In summary, while both the guardian pattern and the try-catch block can be used effectively, the try-catch block is generally recommended for exception handling due to its clearer structure and better code readability. It is important to consider the specific requirements and context of your code when deciding which approach to use.
