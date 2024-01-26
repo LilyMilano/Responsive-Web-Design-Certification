@@ -125,3 +125,34 @@ print(bigword, bigcount)  # * the 7
 # * Output:
 # * Enter file:clown.txt
 # * the 7
+
+# ? ________________________________________________________________________
+
+fname = input("Enter File:")
+if len(fname) < 1:
+    fname = "clown.txt"
+hand = open(fname)
+
+dictionary = dict()
+for line in hand:
+    line = line.rstrip()
+    words = line.split()
+    for word in words:
+        # * idiom: retrieve/create/update counter
+        dictionary[word] = dictionary.get(word, 0) + 1
+        # * print(word, "new", dictionary[word])
+
+print(dictionary)
+# * Output: {'the': 7, 'clown': 2, 'ran': 2, 'after': 1, 'car': 3, 'and': 3, 'into': 1, 'tent': 2, 'fell': 1, 'down': 1, 'on': 1}
+
+# ? Now we want to find the most common word:
+largest = -1
+theword = None
+
+for key, value in dictionary.items():
+    # print(key,value)
+    if value > largest:
+        largest = value
+        theword = key  # * capture/remember the word that was largest
+
+print(theword, largest)  # * Output: the 7
